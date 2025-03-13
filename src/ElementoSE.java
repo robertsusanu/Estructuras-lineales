@@ -1,8 +1,8 @@
-public class Elemento<T> {
+public class ElementoSE<T> {
     private T dato;
-    private Elemento<T> siguiente;
+    private ElementoSE<T> siguiente;
 
-    public Elemento(T elemento){
+    public ElementoSE(T elemento){
         this.dato = elemento;
     }
 
@@ -13,10 +13,10 @@ public class Elemento<T> {
         this.dato = elemento;
     }
 
-    public Elemento<T> getSiguiente(){
+    public ElementoSE<T> getSiguiente(){
         return siguiente;
     }
-    public void setSiguiente(Elemento<T> siguiente){
+    public void setSiguiente(ElementoSE<T> siguiente){
         this.siguiente = siguiente;
     }
 

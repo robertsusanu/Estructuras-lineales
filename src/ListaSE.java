@@ -1,5 +1,5 @@
 public class ListaSE<T> implements Lista<T> {
-    protected Elemento<T> cabeza;
+    protected ElementoSE<T> cabeza;
     protected int numElementos;
 
     public ListaSE() {
@@ -9,11 +9,11 @@ public class ListaSE<T> implements Lista<T> {
 
     @Override
     public boolean add(T elemento) {
-        Elemento<T> temporal = new Elemento<>(elemento);
+        ElementoSE<T> temporal = new ElementoSE<>(elemento);
         if(this.cabeza == null){
             this.cabeza = temporal;
         }else{
-            Elemento<T> aux = this.cabeza;
+            ElementoSE<T> aux = this.cabeza;
             while(aux.getSiguiente() != null){
                 aux = aux.getSiguiente();
             }
@@ -32,7 +32,7 @@ public class ListaSE<T> implements Lista<T> {
             cabeza = cabeza.getSiguiente();
             numElementos--;
         }else{
-            Elemento<T> aux = this.cabeza;
+            ElementoSE<T> aux = this.cabeza;
             while(aux.getSiguiente() != null && aux.getSiguiente().getDato() != elemento){
                 aux = aux.getSiguiente();
                 if(aux.getSiguiente() == null){

@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ElementoTest {
 
-    Elemento<Integer> e = new Elemento<>(6);
+    ElementoSE<Integer> e = new ElementoSE<>(6);
     ListaSE<Integer> lista = new ListaSE<>();
 
     @Test

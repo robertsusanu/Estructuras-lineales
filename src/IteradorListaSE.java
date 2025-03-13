@@ -1,6 +1,6 @@
 public class IteradorListaSE<T> implements Iterador<T> {
     private ListaSE<T> Lista;
-    private Elemento<T> actual;
+    private ElementoSE<T> actual;
 
     public IteradorListaSE(ListaSE<T> lista) {
         this.Lista = lista;
