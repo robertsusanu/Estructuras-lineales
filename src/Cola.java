@@ -19,7 +19,7 @@ public class Cola<T> {
             this.primero = nuevo;
         }else{
             ElementoSE<T> aux = this.primero;
-            while(primero.getSiguiente() != null){
+            while(aux.getSiguiente() != null){
                 aux = aux.getSiguiente();
             }
             aux.setSiguiente(nuevo);
@@ -29,7 +29,8 @@ public class Cola<T> {
 
     public T dequeue(){
         ElementoSE<T> aux = this.primero;
-        return this.primero.getDato();
+        this.primero = this.primero.getSiguiente();
+        return aux.getDato();
     }
 
     public String toString(){

@@ -25,7 +25,7 @@ class ColaTest {
         cola.enqueue(1);
         cola.enqueue(2);
         cola.enqueue(3);
-        System.out.println(cola.dequeue());
+        cola.dequeue();
     }
 
     @Test
