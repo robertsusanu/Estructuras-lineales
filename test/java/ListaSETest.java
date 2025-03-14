@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ListaSETest {
 
-    ListaSE lista = new ListaSE();
+    ListaSE<Integer> lista = new ListaSE();
 
     @Test
     void add() {
@@ -18,13 +18,23 @@ class ListaSETest {
     @Test
     void delete() {
         lista.delete(1);
+
         lista.add(1);
+        System.out.println(lista);
         lista.delete(1);
+        System.out.println(lista);
+
         lista.add(1);
         lista.add(2);
         lista.add(3);
+        lista.add(4);
         System.out.println(lista);
-        lista.delete(2);
+        lista.delete(3);
+        System.out.println(lista);
+        lista.delete(4);
+        System.out.println(lista);
+        lista.delete(1);
+        System.out.println(lista);
         lista.delete(7);
         System.out.println(lista);
     }

@@ -9,11 +9,13 @@ public class IteradorListaSE<T> implements Iterador<T> {
 
     @Override
     public boolean hasNext() {
-        if(Lista.cabeza.getSiguiente() == null){
-            return false;
-        }else{
+        ElementoSE<T> aux = Lista.cabeza;
+        if(Lista.cabeza == null){
+            return false;}
+        if(aux.getSiguiente() != null){
             return true;
-        }
+        }else
+            return false;
     }
 
     @Override
@@ -25,17 +27,8 @@ public class IteradorListaSE<T> implements Iterador<T> {
 
     @Override
     public void delete(){
-        if(Lista.cabeza != null) {
-            Lista.cabeza.setSiguiente(null);
-            while(Lista.cabeza.getSiguiente() != null){
-                Lista.cabeza = Lista.cabeza.getSiguiente();
-                Lista.cabeza.setSiguiente(null);
-            }
-            Lista.numElementos--;
-        }
-    }
-
-    public String toString(){
-        return Lista.toString();
+        ElementoSE<T> temporal = actual;
+        Lista.delete(actual.getDato());
+        actual = temporal.getSiguiente();
     }
 }

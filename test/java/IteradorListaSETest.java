@@ -9,7 +9,9 @@ class IteradorListaSETest {
 
     @Test
     void hasNext() {
+        iterador.hasNext();
         lista.add(1);
+        iterador.hasNext();
         lista.add(2);
         iterador.hasNext();
         iterador.next();
@@ -28,16 +30,12 @@ class IteradorListaSETest {
     void delete() {
         lista.add(1);
         lista.add(2);
+        IteradorListaSE<Integer> iterador = new IteradorListaSE<>(lista);
+        iterador.delete();
         lista.add(3);
+        lista.add(4);
         iterador.next();
         iterador.delete();
-        System.out.println(lista);
     }
 
-    @Test
-    void testToString() {
-        lista.add(1);
-        lista.add(2);
-        System.out.println(iterador.toString());
-    }
 }

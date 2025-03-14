@@ -26,26 +26,22 @@ public class ListaSE<T> implements Lista<T> {
     @Override
     public boolean delete(T elemento) {
         if(cabeza == null){
-            System.out.println("Lista vacia");
             return false;
         }else if(cabeza.getDato() == elemento){
             cabeza = cabeza.getSiguiente();
             numElementos--;
         }else{
             ElementoSE<T> aux = this.cabeza;
-            while(aux.getSiguiente() != null && aux.getSiguiente().getDato() != elemento){
-                aux = aux.getSiguiente();
-                if(aux.getSiguiente() == null){
+            while(aux.getSiguiente() != null) {
+                if(aux.getSiguiente().getDato() == elemento){
                     aux.setSiguiente(aux.getSiguiente().getSiguiente());
                     numElementos--;
                     return true;
-                }else{
-                    System.out.println("El elemento" + elemento + " no se encuentra en la lista" );
-                    return false;
                 }
+                aux = aux.getSiguiente();
             }
         }
-        return true;
+        return false;
     }
 
     @Override
@@ -60,10 +56,15 @@ public class ListaSE<T> implements Lista<T> {
 
     public String toString(){
         String temporal = " ";
-        temporal = cabeza.toString();
-        while(cabeza.getSiguiente() != null){
-            temporal = temporal + " " + cabeza.getSiguiente().toString();
-            cabeza = cabeza.getSiguiente();
+        ElementoSE<T> aux = this.cabeza;
+        if(cabeza == null){
+            return "Lista vacia";
+        }else{
+            temporal = aux.toString();
+            while(aux.getSiguiente() != null) {
+                aux = aux.getSiguiente();
+                temporal += ", " + aux.toString();
+            }
         }
     return temporal;
     }

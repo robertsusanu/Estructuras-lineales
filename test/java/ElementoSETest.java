@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class ElementoTest {
+class ElementoSETest {
 
     ElementoSE<Integer> e = new ElementoSE<>(6);
     ListaSE<Integer> lista = new ListaSE<>();
@@ -26,6 +24,9 @@ class ElementoTest {
 
     @Test
     void setSiguiente() {
+        lista.add(1);
+        ElementoSE<Integer> elem1= new ElementoSE<>(6);
+        e.setSiguiente(elem1);
     }
 
     @Test
